@@ -1,0 +1,15 @@
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\bin\AnyCPU\Debug\BodyBasics-WPF.exe.config
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\bin\AnyCPU\Debug\BodyBasics-WPF.exe
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\bin\AnyCPU\Debug\BodyBasics-WPF.pdb
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\bin\AnyCPU\Debug\Microsoft.Kinect.dll
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\bin\AnyCPU\Debug\Microsoft.Kinect.xml
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\obj\Debug\TrajectoryCorrect-WPF.csprojResolveAssemblyReference.cache
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\obj\Debug\MainWindow.baml
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\obj\Debug\MainWindow.g.cs
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\obj\Debug\App.g.cs
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\obj\Debug\BodyBasics-WPF_MarkupCompile.cache
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\obj\Debug\BodyBasics-WPF.g.resources
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\obj\Debug\TrajectoryCorrect-WPF.csproj.GenerateResource.Cache
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\obj\Debug\BodyBasics-WPF.exe
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\obj\Debug\BodyBasics-WPF.pdb
+e:\Users\leopard\Documents\程序\TrajectoryCorrect\obj\Debug\Microsoft.Samples.Kinect.TrajectoryCorrect.Properties.Resources.resources

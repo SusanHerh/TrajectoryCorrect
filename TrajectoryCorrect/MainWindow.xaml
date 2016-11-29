@@ -1,0 +1,132 @@
+﻿<Window x:Class="Microsoft.Samples.Kinect.TrajectoryCorrect.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:k="http://schemas.microsoft.com/kinect/2014"
+        Title="Trajectory Correct" 
+        Height="700" Width="1200" 
+        Loaded="MainWindow_Loaded"
+        Closing="MainWindow_Closing"> 
+  <Window.Resources>
+    <SolidColorBrush x:Key="MediumGreyBrush" Color="#ff6e6e6e" />
+    <SolidColorBrush x:Key="KinectPurpleBrush" Color="#ff52318f" />
+    <SolidColorBrush x:Key="KinectBlueBrush" Color="#ff00BCF2" />
+    
+    <!-- Header Text Style -->
+    <Style x:Key="HeaderStyle" TargetType="TextBlock">
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="FontFamily" Value="Segoe UI" />
+      <Setter Property="LineHeight" Value="27" />
+      <Setter Property="HorizontalAlignment" Value="Right" />
+      <Setter Property="Margin" Value="0" />
+    </Style>
+    <!-- Base Text Style -->
+    <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
+      <Setter Property="FontFamily" Value="Segoe UI" />
+      <Setter Property="FontSize" Value="14" />
+      <Setter Property="HorizontalAlignment" Value="Left" />
+      <Setter Property="VerticalAlignment" Value="Top" />
+      <Setter Property="Margin" Value="0 10" />
+    </Style>
+    
+    <!--StackPanel Style-->
+    <Style x:Key="BasicStackPanelStyle" TargetType="StackPanel" >
+      <Setter Property="Margin" Value="10 5 10 0" />
+    </Style>
+    <Style x:Key="Row1Column1" TargetType="StackPanel" BasedOn="{StaticResource BasicStackPanelStyle}">
+      <Setter Property="Grid.Row" Value="1" />
+      <Setter Property="Grid.Column" Value="0" />
+    </Style>
+    <Style x:Key="Row2Column1" TargetType="StackPanel" BasedOn="{StaticResource BasicStackPanelStyle}">
+      <Setter Property="Grid.Row" Value="2" />
+      <Setter Property="Grid.Column" Value="0" />
+    </Style>
+    <Style x:Key="Row1Column2" TargetType="StackPanel" BasedOn="{StaticResource BasicStackPanelStyle}">
+      <Setter Property="Grid.Row" Value="1" />
+      <Setter Property="Grid.Column" Value="1" />
+    </Style>
+    <Style x:Key="Row2Column2" TargetType="StackPanel" BasedOn="{StaticResource BasicStackPanelStyle}">
+      <Setter Property="Grid.Row" Value="2" />
+      <Setter Property="Grid.Column" Value="1" />
+    </Style>
+    <Style x:Key="Row1Column3" TargetType="StackPanel" BasedOn="{StaticResource BasicStackPanelStyle}">
+      <Setter Property="Grid.Row" Value="1" />
+      <Setter Property="Grid.Column" Value="2" />
+    </Style>
+    <Style x:Key="Row2Column3" TargetType="StackPanel" BasedOn="{StaticResource BasicStackPanelStyle}">
+      <Setter Property="Grid.Row" Value="2" />
+      <Setter Property="Grid.Column" Value="2" />
+    </Style>
+
+  </Window.Resources>
+
+  <Grid Margin="10 0 10 0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="1*" />
+    </Grid.ColumnDefinitions>
+
+    <!--title-->
+    <Image Grid.Row="0" Source="Images\Logo.png" HorizontalAlignment="Left" Stretch="Fill" Height="32" Width="81" Margin="0 10 0 5" />
+    <TextBlock Grid.Row="0" Grid.Column="2"  VerticalAlignment="Bottom" Foreground="{StaticResource MediumGreyBrush}" Style="{StaticResource HeaderStyle}">康复运动轨迹监测记录</TextBlock>
+    <Image Grid.Row="0" Grid.Column="1" Source="Images\Status.png" Stretch="None" HorizontalAlignment="Center" Margin="0 0 0 5" />
+    <!--<k:KinectUserViewer Grid.Column="1" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" />-->
+    <!--img-->
+    <StackPanel Style="{StaticResource Row1Column1}">
+      <TextBlock Style="{StaticResource BaseTextBlockStyle}">实时运动图像</TextBlock>
+        <Viewbox Grid.Row="1" HorizontalAlignment="Center">
+          <Image Source="{Binding ImageSourceColor}" Stretch="UniformToFill" />
+        </Viewbox>
+    </StackPanel>
+    <!--bones-->
+    <StackPanel Style="{StaticResource Row2Column1}">
+      <TextBlock Style="{StaticResource BaseTextBlockStyle}">运动骨骼轨迹</TextBlock>
+        <Viewbox HorizontalAlignment="Center">
+          <Image Source="{Binding ImageSourceSkeleton}" Stretch="UniformToFill" />
+        </Viewbox>
+    </StackPanel>    
+    <!--left knee-->
+    <StackPanel Style="{StaticResource Row1Column2}">
+      <TextBlock Style="{StaticResource BaseTextBlockStyle}">左膝运动轨迹</TextBlock>
+        <Viewbox HorizontalAlignment="Center">
+          <Image Source="{Binding ImageSource}" Stretch="UniformToFill" />
+        </Viewbox>
+    </StackPanel>
+    <!--left ankle-->
+    <StackPanel Style="{StaticResource Row2Column2}">
+      <TextBlock Style="{StaticResource BaseTextBlockStyle}">左踝运动轨迹</TextBlock>
+        <Viewbox HorizontalAlignment="Center">
+          <Image Source="{Binding ImageSource}" Stretch="UniformToFill" />
+        </Viewbox>
+    </StackPanel>
+    <!--right knee-->
+    <StackPanel Style="{StaticResource Row1Column3}">
+      <TextBlock Style="{StaticResource BaseTextBlockStyle}">右膝运动轨迹</TextBlock>
+        <Viewbox HorizontalAlignment="Center">
+          <Image Source="{Binding ImageSource}" Stretch="UniformToFill" />
+        </Viewbox>
+    </StackPanel>
+    <!--right ankle-->
+    <StackPanel Style="{StaticResource Row2Column3}">
+      <TextBlock Style="{StaticResource BaseTextBlockStyle}">右踝运动轨迹</TextBlock>
+        <Viewbox HorizontalAlignment="Center">
+          <Image Source="{Binding ImageSource}" Stretch="UniformToFill" />
+        </Viewbox>
+    </StackPanel>
+    
+      
+    <StatusBar Grid.Row="3" HorizontalAlignment="Stretch" Name="statusBar" VerticalAlignment="Bottom" Background="White" Foreground="{StaticResource MediumGreyBrush}">
+      <StatusBarItem Content="{Binding StatusText}" />
+    </StatusBar>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="49,441,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        
+    </Grid>
+    
+</Window>
+    

@@ -1,0 +1,2 @@
+e:\Users\leopard\Documents\BodyBasics-WPF\bin\AnyCPU\Debug\BodyBasics-WPF.exe.config
+E:\Users\leopard\Documents\程序\TrajectoryCorrect\bin\AnyCPU\Debug\BodyBasics-WPF.exe.config
